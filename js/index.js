@@ -1,8 +1,8 @@
 // Your code goes here
 
-const funBus = document.querySelectorAll('.btn');
+const buttonTags = document.querySelectorAll('.btn');
 
-funBus.forEach((e) => {
+buttonTags.forEach((e) => {
     e.addEventListener('mouseover', () => {
     e.style.transform = "scale(1.5)";
     e.style.transition = "transform 1s";
@@ -24,6 +24,14 @@ window.addEventListener("resize", () => {
   });
 
 const h4Tags = document.querySelectorAll("h4");
+h4Tags.forEach((e) =>{
+    e.addEventListener('dblclick', () => {
+    e.style.backgroundColor = "blue";
+    e.style.color = "white";
+});
+});
 
-h4Tags
-
+const containerTag = document.querySelector('body');
+window.addEventListener('scroll', () => {
+    containerTag.style.backgroundColor = "orange";
+});
