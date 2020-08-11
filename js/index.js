@@ -32,14 +32,15 @@ h4Tags.forEach((e) =>{
     e.addEventListener('dblclick', () => {
     e.style.backgroundColor = "blue";
     e.style.color = "white";
+    
 });
 });
 
 
-const containerTag = document.querySelector('body');
+const bodyTag = document.querySelector('body');
 // event 5 - SCROLL
 window.addEventListener('scroll', () => {
-    containerTag.style.backgroundColor = "orange";
+    bodyTag.style.backgroundColor = "orange";
 });
 
 // event 6 - AUXCLICK
@@ -74,12 +75,51 @@ for(let i=0; i<onLoad.length; i++)
 })}
 console.log('Navigation bar has loaded!', onLoad);
 
-// #5 MOUSEENTER
-let footerList = document.querySelector(".footer");
 
-footerList.addEventListener("mouseenter", function( event ) {   
-  event.target.style.color = "white";
-  setTimeout(function() {
-    event.target.style.color = "white";
-  }, 300);
-}, false);
+// event 8 - MOUSEENTER
+var enterEventCount = 0;
+var leaveEventCount = 0;
+const mouseTarget = document.querySelector('footer');
+
+mouseTarget.addEventListener('mouseenter', e => {
+  mouseTarget.style.border = '10px dotted black';
+  enterEventCount++;
+});
+
+// event 9 - MOUSELEAVE
+mouseTarget.addEventListener('mouseleave', e => {
+    mouseTarget.style.border = '2px dashed #C0C0C0';
+    leaveEventCount++;
+  });
+
+// event 10 - Context Menu
+noContext = document.querySelectorAll('.text-content');
+
+noContext.forEach((el) => {
+    el.addEventListener('contextmenu', e => {
+  e.preventDefault();
+})
+});
+
+
+
+// Stop the navigation items from refreshing the page by using preventDefault()
+const navTag = document.querySelectorAll('.nav-link');
+
+navTag.forEach((el) => {
+    el.addEventListener('click', e => {
+        e.preventDefault();
+    })
+});
+
+// Nest two similar events somewhere in the site and prevent the event propagation properly. Remember not all event types bubble.
+
+const headerTag = document.querySelectorAll('p');
+
+headerTag.forEach((el) => {
+    el.addEventListener('click', e => {
+    
+    e.target.style.backgroundColor = "green";
+    e.stopPropagation();
+    });
+});
