@@ -1,5 +1,4 @@
 // Your code goes here
-import { gsap } from "gsap";
 
 const buttonTags = document.querySelectorAll('.btn');
 
@@ -126,9 +125,9 @@ headerTag.forEach((el) => {
     });
 });
 
-CustomEase.create("hop", "M0,0.005 C0,0.005 0.056,0.445 0.175,0.445 0.294,0.445 0.332,0 0.332,0 0.332,0 0.414,1 0.671,1 0.991,1 1,0 1,0");
+// CustomEase.create("hop", "M0,0.005 C0,0.005 0.056,0.445 0.175,0.445 0.294,0.445 0.332,0 0.332,0 0.332,0 0.414,1 0.671,1 0.991,1 1,0 1,0");
 
-gsap.to(".content-pick", {duration: 2,  ease: "hop", scale:1.5, rotation:30 });
+// gsap.to(".content-pick", {duration: 2,  ease: "hop", scale:1.5, rotation:30 });
 
 
 gsap.to('.logo-heading', {
